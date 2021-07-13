@@ -1,7 +1,7 @@
 # Helper script for VSTS Releases
 
 param (
-    [ValidateSet('ADF', 'PSO', 'ABC', 'HUB', 'AOA')]
+    [ValidateSet('WEB', 'PSO', 'ABC', 'HUB', 'AOA')]
     [String]$APP = 'AOA',
     
     [String]$Env,

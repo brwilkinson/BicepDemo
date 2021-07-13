@@ -6,10 +6,10 @@ trigger: #none
     exclude: [ NoBuild ]
 
 variables:
-  ORG:        BRW
-  APP :       HAA
+  ORG:        SPK
+  APP :       WEB
   
-  PREFIX:     ACU1
+  PREFIX:     AEU2
   ENV:        S1
   
   ADOProject: ADO_ADF

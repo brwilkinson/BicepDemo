@@ -14,7 +14,7 @@
     "vmAdminPassword": {
       "reference": {
         "keyVault": {
-          "id": "/subscriptions/855c22ce-7a6c-468b-ac72-1d1ef4355acf/resourceGroups/ACU1-BRW-HAA-RG-P0/providers/Microsoft.KeyVault/vaults/ACU1-BRW-HAA-P0-kvVLT01"
+          "id": "/subscriptions/855c22ce-7a6c-468b-ac72-1d1ef4355acf/resourceGroups/ACU1-SPK-WEB-RG-P0/providers/Microsoft.KeyVault/vaults/ACU1-SPK-WEB-P0-kvVLT01"
         },
         "secretName": "localadmin"
       }
@@ -22,7 +22,7 @@
     "sshPublic": {
       "reference": {
         "keyVault": {
-          "id": "/subscriptions/855c22ce-7a6c-468b-ac72-1d1ef4355acf/resourceGroups/ACU1-BRW-HAA-RG-P0/providers/Microsoft.KeyVault/vaults/ACU1-BRW-HAA-P0-kvVLT01"
+          "id": "/subscriptions/855c22ce-7a6c-468b-ac72-1d1ef4355acf/resourceGroups/ACU1-SPK-WEB-RG-P0/providers/Microsoft.KeyVault/vaults/ACU1-SPK-WEB-P0-kvVLT01"
         },
         "secretName": "sshPublic"
       }
@@ -30,7 +30,7 @@
     "devOpsPat": {
       "reference": {
         "keyVault": {
-          "id": "/subscriptions/855c22ce-7a6c-468b-ac72-1d1ef4355acf/resourceGroups/ACU1-BRW-HAA-RG-P0/providers/Microsoft.KeyVault/vaults/ACU1-BRW-HAA-P0-kvVLT01"
+          "id": "/subscriptions/855c22ce-7a6c-468b-ac72-1d1ef4355acf/resourceGroups/ACU1-SPK-WEB-RG-P0/providers/Microsoft.KeyVault/vaults/ACU1-SPK-WEB-P0-kvVLT01"
         },
         "secretName": "devOpsPat"
       }
@@ -128,17 +128,17 @@
               {
                 "Name": "Private DNS Zone Contributor",
                 "RG": "P0",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               },
               {
                 "Name": "Key Vault Certificates Officer",
                 "RG": "P0",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               },
               {
                 "Name": "Key Vault Secrets User",
                 "RG": "P0",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               },
               {
                 "Name": "Network Contributor"
@@ -160,19 +160,19 @@
                 "Name": "Storage File Data SMB Share Contributor",
                 "RG": "G1",
                 "Prefix": "ACU1",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               },
               {
                 "Name": "Storage Blob Data Contributor",
                 "RG": "G1",
                 "Prefix": "ACU1",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               },
               {
                 "Name": "Storage Queue Data Contributor",
                 "RG": "G1",
                 "Prefix": "ACU1",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               }
             ]
           },
@@ -183,7 +183,7 @@
                 "Name": "Storage Account Key Operator Service Role",
                 "RG": "G1",
                 "Prefix": "ACU1",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               }
             ]
           },
@@ -193,7 +193,7 @@
               {
                 "Name": "Key Vault Secrets User",
                 "RG": "P0",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               }
             ]
           },
@@ -243,12 +243,12 @@
           //     {
           //       "Name": "Key Vault Certificates Officer",
           //       "RG": "P0",
-          //       "Tenant": "HAA"
+          //       "Tenant": "WEB"
           //     },
           //     {
           //       "Name": "Key Vault Secrets User",
           //       "RG": "P0",
-          //       "Tenant": "HAA"
+          //       "Tenant": "WEB"
           //     }
           //   ]
           // },
@@ -275,42 +275,42 @@
               {
                 "Name": "Reader and Data Access",
                 "RG": "G1",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               },
               {
                 "Name": "Storage Account Key Operator Service Role",
                 "RG": "G1",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               },
               {
                 "Name": "Log Analytics Contributor",
                 "RG": "G1",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               },
               {
                 "Name": "Log Analytics Contributor",
                 "RG": "P0",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               },
               {
                 "Name": "Key Vault Secrets User",
                 "RG": "P0",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               },
               {
                 "Name": "Network Contributor",
                 "RG": "P0",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               },
               {
                 "Name": "DNS Zone Contributor",
                 "RG": "P0",
-                "Tenant": "HAA"
+                "Tenant": "WEB"
               },
               {
                 "Name": "DNS Zone Contributor",
                 "RG": "P0",
-                "Tenant": "HAA",
+                "Tenant": "WEB",
                 "PREFIX": "AEU2"
               }
             ]
@@ -580,17 +580,17 @@
             "apimSku": "Developer",
             "snName": "BE01",
             "virtualNetworkType": "Internal",
-            "certName": "HAAPP-WildCard",
+            "certName": "WEBPP-WildCard",
             "frontDoor": "01"
           }
         ],
         "frontDoorInfo": [
           {
             "name": "01",
-            "_afdverify": "HAA",
+            "_afdverify": "WEB",
             "services": [
               {
-                "Name": "APIM01", // acu1-brw-haa-s1-afd 01 - apim01 .haapp.net
+                "Name": "APIM01", // acu1-spk-web-s1-afd 01 - apim01 .webpp.net
                 "BEAddress": "apim01.azure-api.net", //always use the gateway
                 "ProbeName": "probe01",
                 "LBSettings": "balance01",
@@ -612,7 +612,7 @@
                 ]
               },
               {
-                "Name": "APIM01-Scm", // acu1-brw-haa-s1-afd 01 - apim01-scm .haapp.net
+                "Name": "APIM01-Scm", // acu1-spk-web-s1-afd 01 - apim01-scm .webpp.net
                 "BEAddress": "apim01.azure-api.net", //always use the gateway
                 "ProbeName": "probe01",
                 "LBSettings": "balance01",
@@ -816,7 +816,7 @@
             "WAFCapacity": 2,
             "PrivateIP": "29",
             "SSLCerts": [
-              "HAAPP-WildCard"
+              "WEBPP-WildCard"
             ],
             "commentFQDN": "for FQDNs Justuse NetBios since Domain is AddedfromGlobalParam",
             "BEIPs": [], //"useAGIC"
@@ -851,15 +851,15 @@
                 "Port": 443,
                 "BackendPort": "80",
                 "Protocol": "https",
-                "Cert": "HAAPP-WildCard",
-                "Domain": "haapp.net",
+                "Cert": "WEBPP-WildCard",
+                "Domain": "webpp.net",
                 "Hostname": "waf",
                 "Interface": "Public"
               },
               {
                 "Port": 80,
                 "Protocol": "http",
-                "Domain": "haapp.net",
+                "Domain": "webpp.net",
                 "Hostname": "waf",
                 "Interface": "Public",
                 "httpsRedirect": 0
