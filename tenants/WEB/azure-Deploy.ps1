@@ -1,5 +1,5 @@
 param (
-    [string]$Enviro = 'G0',
+    [string]$Enviro = 'S1',
     [string]$App = 'WEB'
 )
 import-module -Name "$PSScriptRoot\..\..\release\azSet.psm1" -force
