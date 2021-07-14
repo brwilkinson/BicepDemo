@@ -1,5 +1,9 @@
 {
   "RolesGroupsLookup": {
+    "ACR_Webhook_Operator": {
+      "Id": "842def16-1179-5204-8c1b-98adc2f198d9",
+      "Description": "Lets you manage ACR webhooks"
+    },
     "AcrDelete": {
       "Id": "c2f4ef07-c644-48eb-af81-4b1b4947fb11",
       "Description": "acr delete"
@@ -231,6 +235,10 @@
     "Azure Stack Registration Owner": {
       "Id": "6f12a6df-dd06-4f3e-bcb1-ce8be600526a",
       "Description": "Lets you manage Azure Stack registrations."
+    },
+    "AzureML Data Scientist": {
+      "Id": "f6c7c914-8db3-469d-8ca1-694a8f32e121",
+      "Description": "Can perform all actions within an Azure Machine Learning workspace, except for creating or deleting compute resources and modifying the workspace itself."
     },
     "AzureML Metrics Writer (preview)": {
       "Id": "635dd51f-9968-44d3-b7fb-6d9a6bd613ae",
@@ -596,6 +604,10 @@
       "Id": "48b40c6e-82e0-4eb3-90d5-19e40f49b624",
       "Description": "Can read, write, delete, and re-onboard Hybrid servers to the Hybrid Resource Provider."
     },
+    "Image_Builder": {
+      "Id": "59101363-f08e-5cd7-b1a6-e420773d3d8b",
+      "Description": "Lets you deploy vm images"
+    },
     "Integration Service Environment Contributor": {
       "Id": "a41e2c5b-bd99-4a07-88f4-9bf657a760b8",
       "Description": "Lets you manage integration service environments, but not access to them."
@@ -659,6 +671,10 @@
     "Key Vault Secrets User": {
       "Id": "4633458b-17de-408a-b874-0445c86b69e6",
       "Description": "Read secret contents. Only works for key vaults that use the 'Azure role-based access control' permission model."
+    },
+    "Key_Vault_Reader": {
+      "Id": "73136176-c38a-5a73-9421-dc6050397c75",
+      "Description": "Lets you run deployments from the KeyVault"
     },
     "Knowledge Consumer": {
       "Id": "ee361c5d-f7b5-4119-b4b6-892157c8f64c",

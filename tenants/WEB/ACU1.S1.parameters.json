@@ -251,6 +251,9 @@
                 "Name": "Contributor"
               },
               {
+                "Name": "ACR_Webhook_Operator"
+              },
+              {
                 "Name": "User Access Administrator"
               },
               {
