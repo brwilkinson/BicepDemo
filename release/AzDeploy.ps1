@@ -28,4 +28,4 @@ $Params = @{
     TemplateFile = $templatefile
 }
 
-Start-AzDeploy @Params -VSTS -SubscriptionDeploy:$SubscriptionDeploy # -LogAzDebug:$LogAzDebug -FullUpload:$FullUpload
+Start-AzDeploy @Params -SubscriptionDeploy:$SubscriptionDeploy # -LogAzDebug:$LogAzDebug -FullUpload:$FullUpload -VSTS
