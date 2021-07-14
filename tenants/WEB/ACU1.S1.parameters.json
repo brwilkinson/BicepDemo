@@ -248,7 +248,7 @@
             "Name": "GH_{GHProject}_{RGNAME}",
             "RBAC": [
               {
-                "Name": "Contributor"
+                "Name": "Owner"
               },
               {
                 "Name": "ACR_Webhook_Operator"
