@@ -452,8 +452,6 @@
             "reserved": false,
             "skuname": "EP1",
             "skutier": "ElasticPremium",
-            "skusize": "EP1",
-            "skufamily": "EP",
             "skucapacity": 1,
             "maxWorkerCount": 100,
             "deploy": 1

@@ -3,9 +3,9 @@ parameters:
 - name: ORG
   displayName: ORG Code
   type: string
-  default: BRW
+  default: SPK
   values:
-  - BRW
+  - SPK
 
 - name: PREFIX
   displayName: Region Prefix
@@ -20,18 +20,18 @@ parameters:
 - name: APP
   displayName: App/Tenant Name
   type: string
-  default: AOA
+  default: WEB
   values:
   - AOA
   - ABC
-  - ADF
+  - WEB
   - HAA
   - HUB
 
 - name: ENV
   displayName: Environment Name
   type: string
-  default: T5
+  default: S1
 
 - name: SP
   displayName: Service principal name

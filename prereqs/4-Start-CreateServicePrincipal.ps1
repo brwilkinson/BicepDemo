@@ -6,7 +6,7 @@ param (
     [String[]]$Environments = ('G1'),
     [String]$Prefix = 'ACU1',
     [String]$App = 'HAA',
-    [String]$OrgName = 'BRW'
+    [Int]$SecretExpiryYears = 5
 )
 
 # This file is used for Azure DevOps
@@ -28,6 +28,7 @@ $AZDevOpsOrg = $Global.Global.AZDevOpsOrg
 $ADOProject = $Global.Global.ADOProject
 $SPAdmins = $Global.Global.ServicePrincipalAdmins
 $AppName = $Global.Global.AppName
+$OrgName = $Global.Global.OrgName
 $RolesLookup = $Global.Global.RolesLookup
 $StartLength = $RolesLookup | Get-Member -MemberType NoteProperty | Measure-Object
 
@@ -39,7 +40,7 @@ Set-VSTeamAccount -Profile $AZDevOpsOrg -Drive vsts
 
 if (-not (Get-PSDrive -Name vsts -ErrorAction ignore))
 {
-    New-PSDrive -Name vsts -PSProvider SHiPS -Root 'VSTeam#vsteam_lib.Provider.Account' -Description https://dev.azure.com/AzureDeploymentFramework
+    New-PSDrive -Name vsts -PSProvider SHiPS -Root 'VSTeam#vsteam_lib.Provider.Account' -Description https://dev.azure.com/${AZDevOpsOrg}
 }
 
 ls vsts: | ft -AutoSize
@@ -56,7 +57,7 @@ Foreach ($Environment in $Environments)
     if (! $appID)
     {
         # Create Service Principal
-        New-AzADServicePrincipal -DisplayName $ServicePrincipalName -OutVariable sp
+        New-AzADServicePrincipal -DisplayName $ServicePrincipalName -OutVariable sp -EndDate (Get-Date).AddYears($SecretExpiryYears) -Role Reader -Scope /subscriptions/$SubscriptionID
         $pw = [pscredential]::new('user', $sp.secret).GetNetworkCredential().Password
     
         $appID = Get-AzADApplication -DisplayName $ServicePrincipalName

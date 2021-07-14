@@ -4,7 +4,7 @@
     "hubVnetName": "ACU1-SPK-WEB-P0-vn",
     "KVName": "ACU1-SPK-WEB-P0-kvVLT01",
     "KVUrl": "https://acu1-spk-web-p0-kvvlt01.vault.azure.net/",
-    "certificateUrl": "https://acu1-spk-web-p0-kvvlt01.vault.azure.net/secrets/WEBPP-WildCard/498eb2711a7847858b0b9e772ff8513a",
+    "certificateUrl": "https://acu1-spk-web-p0-kvvlt01.vault.azure.net/secrets/HAAPP-WildCard/c863ab96c5b146c9b8f68619f84eaabf",
     "networkId": [
       "10.10.",
       144

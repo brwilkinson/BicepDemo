@@ -3,8 +3,8 @@
     "HubRGName": "AEU2-SPK-WEB-RG-P0",
     "hubVnetName": "AEU2-SPK-WEB-P0-vn",
     "KVName": "AEU2-SPK-WEB-P0-kvVLT01",
-    "KVUrl": "https://aeu1-spk-web-p0-kvvlt01.vault.azure.net/",
-    "certificateUrl": "https://aeu2-spk-web-p0-kvvlt01.vault.azure.net/secrets/webpp-wildcard56d1440f-e1ab-476d-8d47-d1c28d792238/bd06c05d1a5c4fcdbdfa077dbae85836",
+    "KVUrl": "https://aeu2-spk-web-p0-kvvlt01.vault.azure.net/",
+    "certificateUrl": "https://aeu2-spk-web-p0-kvvlt01.vault.azure.net:443/secrets/HAAPP-WildCard/9a22671c18e94714b078fdba2c256d2e",
     "networkId": [
       "172.16.",
       144

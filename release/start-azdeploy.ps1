@@ -59,7 +59,7 @@ Function global:Start-AzDeploy
     $PrefixLookup = Get-Content $Artifacts\release\prefix.json | ConvertFrom-Json
     $Global.Add('PrefixLookup', ($PrefixLookup | ConvertTo-Json -Compress -Depth 10))
 
-    $ResourceGroupLocation = $PrefixLookup | Where-Object Prefix -EQ $Prefix | ForEach-Object location
+    $ResourceGroupLocation = $PrefixLookup | Foreach $Prefix | ForEach-Object location
 
     $GlobalGlobal = Get-Content -Path $Artifacts\tenants\$App\Global-Global.json | ConvertFrom-Json -Depth 10 | ForEach-Object Global
     $Regional = Get-Content -Path $Artifacts\tenants\$App\Global-$Prefix.json | ConvertFrom-Json -Depth 10 | ForEach-Object Global

@@ -104,14 +104,6 @@
       "Id": "d63b75f7-47ea-4f27-92ac-e0d173aaf093",
       "Description": "Grants read access to Autonomous Development Platform data."
     },
-    "Avere Cluster Create": {
-      "Id": "a7b1b19a-0e83-4fe5-935c-faaefbfd18c3",
-      "Description": "Avere cluster create role used by the Avere controller to create a vFXT cluster."
-    },
-    "Avere Cluster Runtime Operator": {
-      "Id": "e078ab98-ef3a-4c9a-aba7-12f5172b45d0",
-      "Description": "Avere cluster runtime role used by Avere clusters running in subscriptions, for the purpose of failing over IP addresses, accessing BLOB storage, etc"
-    },
     "Avere Contributor": {
       "Id": "4f8fab4f-1852-4a58-a46a-8eaf358af14a",
       "Description": "Can create and manage an Avere vFXT cluster."
@@ -232,10 +224,6 @@
       "Id": "69a216fc-b8fb-44d8-bc22-1f3c2cd27a39",
       "Description": "Allows for send access to Azure Service Bus resources."
     },
-    "Azure Service Deploy Release Management Contributor": {
-      "Id": "21d96096-b162-414a-8302-d8354f9d91b2",
-      "Description": "Contributor role for services deploying through Azure Service Deploy."
-    },
     "Azure Spring Cloud Data Reader": {
       "Id": "b5537268-8956-4941-a8f0-646150406f0c",
       "Description": "Allow read access to Azure Spring Cloud Data"
@@ -279,10 +267,6 @@
     "Blueprint Operator": {
       "Id": "437d2ced-4a38-4302-8479-ed2bcb43d090",
       "Description": "Can assign existing published blueprints, but cannot create new blueprints. NOTE: this only works if the assignment is done with a user-assigned managed identity."
-    },
-    "CAL-Custom-Role": {
-      "Id": "7b266cd7-0bba-4ae2-8423-90ede5e1e898",
-      "Description": "Lets SAP Cloud Appliance Library application manage Network and Compute services, manage Resource Groups and Management locks."
     },
     "CDN Endpoint Contributor": {
       "Id": "426e0c7f-0c7e-4658-b36f-ff54d6c29b45",
@@ -536,14 +520,6 @@
       "Id": "5bd9cd88-fe45-4216-938b-f97437e15450",
       "Description": "Lets you manage DocumentDB accounts, but not access to them."
     },
-    "Dsms Role (deprecated)": {
-      "Id": "b91f4c0b-46e3-47bb-a242-eecfe23b3b5b",
-      "Description": "Custom role used by Dsms to perform operations. Can list and regnerate storage account keys."
-    },
-    "Dsms Role (do not use)": {
-      "Id": "7aff565e-6c55-448d-83db-ccf482c6da2f",
-      "Description": "Custom role used by Dsms to perform operations. Can list and regnerate storage account keys."
-    },
     "EventGrid Contributor": {
       "Id": "1e241071-0855-49ea-94dc-649edcd759de",
       "Description": "Lets you manage EventGrid operations."
@@ -576,10 +552,6 @@
       "Id": "49632ef5-d9ac-41f4-b8e7-bbe587fa74a1",
       "Description": "Experimentation Reader"
     },
-    "ExpressRoute Administrator": {
-      "Id": "a48d7896-14b4-4889-afef-fbb65a96e5a2",
-      "Description": "Can create, delete and manage ExpressRoutes"
-    },
     "FHIR Data Contributor": {
       "Id": "5a1fc7df-4bf1-4951-a576-89034ee01acd",
       "Description": "Role allows user or principal full access to FHIR Data"
@@ -599,14 +571,6 @@
     "FHIR Data Writer": {
       "Id": "3f88fce4-5892-4214-ae73-ba5294559913",
       "Description": "Role allows user or principal to read and write FHIR Data"
-    },
-    "GenevaWarmPathResourceContributor": {
-      "Id": "9f15f5f5-77bd-413a-aa88-4b9c68b1e7bc",
-      "Description": "Can manage service bus and storage accounts."
-    },
-    "GenevaWarmPathStorageBlobContributor": {
-      "Id": "a16c43ca-2d67-4dcd-9ded-6412f5edc51a",
-      "Description": "Geneva Warm Path Storage Blob Contributor"
     },
     "Graph Owner": {
       "Id": "b60367af-1334-4454-b71e-769d9a4f83d9",
@@ -631,10 +595,6 @@
     "Hybrid Server Resource Administrator": {
       "Id": "48b40c6e-82e0-4eb3-90d5-19e40f49b624",
       "Description": "Can read, write, delete, and re-onboard Hybrid servers to the Hybrid Resource Provider."
-    },
-    "Image_Builder": {
-      "Id": "0ad10259-71c1-50ca-9314-a4960582ad8b",
-      "Description": "Lets you deploy vm images"
     },
     "Integration Service Environment Contributor": {
       "Id": "a41e2c5b-bd99-4a07-88f4-9bf657a760b8",
@@ -700,10 +660,6 @@
       "Id": "4633458b-17de-408a-b874-0445c86b69e6",
       "Description": "Read secret contents. Only works for key vaults that use the 'Azure role-based access control' permission model."
     },
-    "Key_Vault_Reader": {
-      "Id": "49bbb43e-45b6-55ca-8372-e093b67a8d8c",
-      "Description": "Lets you run deployments from the KeyVault"
-    },
     "Knowledge Consumer": {
       "Id": "ee361c5d-f7b5-4119-b4b6-892157c8f64c",
       "Description": "Knowledge Read permission to consume Enterprise Graph Knowledge using entity search and graph query"
@@ -768,10 +724,6 @@
       "Id": "ac63b705-f282-497d-ac71-919bf39d939d",
       "Description": "Management Group Reader Role"
     },
-    "masterreader": {
-      "Id": "a48d7796-14b4-4889-afef-fbb65a93e5a2",
-      "Description": "Lets you view everything, but not make any changes."
-    },
     "Media Services Account Administrator": {
       "Id": "054126f8-9a2b-4f1c-a9ad-eca461f08466",
       "Description": "Create, read, modify, and delete Media Services accounts; read-only access to other Media Services resources."
@@ -791,10 +743,6 @@
     "Media Services Streaming Endpoints Administrator": {
       "Id": "99dba123-b5fe-44d5-874c-ced7199a5804",
       "Description": "Create, read, modify, and delete Streaming Endpoints; read-only access to other Media Services resources."
-    },
-    "Microsoft OneAsset Reader": {
-      "Id": "fd1bb084-1503-4bd2-99c0-630220046786",
-      "Description": "This role is for Microsoft OneAsset team (CSEO) to track internal security compliance and resource utilization."
     },
     "Microsoft.Kubernetes connected cluster role": {
       "Id": "5548b2cf-c94c-4228-90ba-30851930a12f",
@@ -835,10 +783,6 @@
     "Object Understanding Account Reader": {
       "Id": "d18777c0-1514-4662-8490-608db7d334b6",
       "Description": "Lets you read ingestion jobs for an object understanding account."
-    },
-    "Office DevOps": {
-      "Id": "7fd64851-3279-459b-b614-e2b2ba760f5b",
-      "Description": "Custom access for developers to operations but not secrets."
     },
     "Owner": {
       "Id": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
