@@ -11,7 +11,7 @@
     "DeploymentID": {
       "value": "1"
     },
-        "vmAdminPassword": {
+    "vmAdminPassword": {
       "reference": {
         "keyVault": {
           "id": "/subscriptions/855c22ce-7a6c-468b-ac72-1d1ef4355acf/resourceGroups/ACU1-SPK-WEB-RG-P0/providers/Microsoft.KeyVault/vaults/ACU1-SPK-WEB-P0-kvVLT01"
@@ -384,8 +384,8 @@
             "Name": "CTR01",
             "kind": "linux",
             "perSiteScaling": false,
-            "reserved": true,   //true for containers
-            "skuname": "B1",    //"P1v2",
+            "reserved": true, //true for containers
+            "skuname": "B1", //"P1v2",
             "skutier": "Basic", //"PremiumV2",
             "skucapacity": 1,
             "deploy": 1
