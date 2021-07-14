@@ -18,7 +18,7 @@ param (
 . $PSScriptRoot\Start-AzDeploy.ps1
 $Artifacts = Get-Item -Path "$PSScriptRoot\.."
 
-$templatefile = "$Artifacts\$stage.json"
+$templatefile = "$Artifacts\bicep\$stage.bicep"
 
 $Params = @{
     App          = $APP
