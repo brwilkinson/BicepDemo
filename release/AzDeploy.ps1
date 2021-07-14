@@ -10,9 +10,9 @@ param (
     
     [String]$stage = 'ALL',
     
-    [switch]$SubscriptionDeploy,
+    [switch]$SubscriptionDeploy
     
-    [switch]$FullUpload
+    # [switch]$FullUpload
 )
 
 . $PSScriptRoot\Start-AzDeploy.ps1
@@ -28,4 +28,4 @@ $Params = @{
     TemplateFile = $templatefile
 }
 
-Start-AzDeploy @Params -FullUpload:$FullUpload -VSTS -SubscriptionDeploy:$SubscriptionDeploy # -LogAzDebug:$LogAzDebug
+Start-AzDeploy @Params -VSTS -SubscriptionDeploy:$SubscriptionDeploy # -LogAzDebug:$LogAzDebug -FullUpload:$FullUpload
