@@ -286,6 +286,11 @@
                 "Tenant": "AOA"
               },
               {
+                "Name": "Key_Vault_Reader",
+                "RG": "P0",
+                "Tenant": "AOA"
+              },
+              {
                 "Name": "Key Vault Secrets User",
                 "RG": "P0",
                 "Tenant": "AOA"
@@ -472,7 +477,7 @@
             "Name": "CTR01",
             "kind": "linux",
             "perSiteScaling": false,
-            "reserved": true,   //true for containers
+            "reserved": true, //true for containers
             "skuname": "P1v2",
             "skutier": "PremiumV2",
             "skusize": "P1v2",

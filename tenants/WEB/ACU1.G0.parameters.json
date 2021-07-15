@@ -147,14 +147,6 @@
         ],
         "RoleDefinitionsInfo": [
           {
-            "RoleName": "ACR_Webhook_Operator",
-            "description": "Lets you manage ACR webhooks",
-            "notActions": [],
-            "actions": [
-              "Microsoft.ContainerRegistry/registries/webhooks/*"
-            ]
-          },
-          {
             "RoleName": "Key_Vault_Reader",
             "description": "Lets you run deployments from the KeyVault",
             "notActions": [],

@@ -42,10 +42,10 @@
         "UAI": 1,
         "SP": 1,  
         "KV": 0,
-        "OMS": 0, //
+        "OMS": 1, //
         "OMSSolutions": 0,
-        "OMSDataSources": 0, //
-        "SA": 0,  //
+        "OMSDataSources": 1, //
+        "SA": 1,  //
         "CDN": 0,
         "StorageSync": 0,
         "RSV": 0,
@@ -81,14 +81,14 @@
         "APPCONFIG": 0,
         "REDIS": 0,
         "APIM": 0,
-        "ACR": 0,  //
+        "ACR": 1,  //
         "ACI": 0,
         "AKS": 0,
         "SQLMI": 0,
         "CosmosDB": 0,
         "DASHBOARD": 0,
         "DNSLookup": 0,
-        "ServerFarm": 0,  //
+        "ServerFarm": 1,  //
         "WebSite": 0,
         "WebSiteContainer": 0,
         "MySQLDB": 0,
