@@ -253,17 +253,20 @@
               {
                 "Name": "Reader and Data Access",
                 "RG": "G1",
-                "Tenant": "AOA"
+                "Tenant": "AOA",
+                "PREFIX": "ACU1"
               },
               {
                 "Name": "Storage Account Key Operator Service Role",
                 "RG": "G1",
-                "Tenant": "AOA"
+                "Tenant": "AOA",
+                "PREFIX": "ACU1"
               },
               {
                 "Name": "Log Analytics Contributor",
                 "RG": "G1",
-                "Tenant": "AOA"
+                "Tenant": "AOA",
+                "PREFIX": "ACU1"
               },
               {
                 "Name": "Log Analytics Contributor",
@@ -289,7 +292,7 @@
                 "Name": "DNS Zone Contributor",
                 "RG": "P0",
                 "Tenant": "AOA",
-                "PREFIX": "AEU2"
+                "PREFIX": "ACU1"
               }
             ]
           }

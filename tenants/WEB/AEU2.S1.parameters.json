@@ -38,14 +38,14 @@
     "Stage": {
       "value": {
         "RG": 1,
-        "RBAC": 0, //
-        "UAI": 0, //
-        "SP": 0, //  
+        "RBAC": 1, //
+        "UAI": 1, //
+        "SP": 1, //  
         "KV": 0,
-        "OMS": 0, //
+        "OMS": 1, //
         "OMSSolutions": 0,
-        "OMSDataSources": 0, //
-        "SA": 0,  //
+        "OMSDataSources": 1, //
+        "SA": 1,  //
         "CDN": 0,
         "StorageSync": 0,
         "RSV": 0,
@@ -256,17 +256,21 @@
               {
                 "Name": "Reader and Data Access",
                 "RG": "G1",
-                "Tenant": "WEB"
+                "Tenant": "WEB",
+                "PREFIX": "ACU1"
+
               },
               {
                 "Name": "Storage Account Key Operator Service Role",
                 "RG": "G1",
-                "Tenant": "WEB"
+                "Tenant": "WEB",
+                "PREFIX": "ACU1"
               },
               {
                 "Name": "Log Analytics Contributor",
                 "RG": "G1",
-                "Tenant": "WEB"
+                "Tenant": "WEB",
+                "PREFIX": "ACU1"
               },
               {
                 "Name": "Log Analytics Contributor",
@@ -297,7 +301,7 @@
                 "Name": "DNS Zone Contributor",
                 "RG": "P0",
                 "Tenant": "WEB",
-                "PREFIX": "AEU2"
+                "PREFIX": "ACU1"
               }
             ]
           }

@@ -37,6 +37,10 @@ parameters:
   displayName: Service principal name
   type: string
 
+- name: SPGLOBAL
+  displayName: Service principal name with owner on subscription
+  type: string
+
 jobs:
 - job: Subscription_RG_RBAC_${{ parameters.PREFIX }}_${{ parameters.ORG }}_${{ parameters.APP }}_RG_${{ parameters.ENV }}
   pool:
@@ -45,7 +49,7 @@ jobs:
   steps:
   - task: AzurePowerShell@5
     inputs:
-      azureSubscription: ${{ parameters.SP }}-G0
+      azureSubscription: ${{ parameters.SPGLOBAL }}
       ScriptType: 'FilePath'
       ScriptPath: 'release/azDeploy.ps1'
       ScriptArguments: '-app ${{ parameters.APP }} -env ${{ parameters.ENV }} -Prefix ${{ parameters.PREFIX }} -stage "00-dp-sub-InitialRG" -SubscriptionDeploy'
