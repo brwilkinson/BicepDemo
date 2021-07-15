@@ -12,7 +12,7 @@ variables:
   PREFIX:     ACU1
   ENV:        S1
   
-  ADOProject: ADO_ADF
+  ADOProject: ADO_BICEPDEMO
 
 stages:
 - stage: Deploy_All_${{ variables.PREFIX }}_${{ variables.ORG }}_${{ variables.APP }}_RG_${{ variables.ENV }}
