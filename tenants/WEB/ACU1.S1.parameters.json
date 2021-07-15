@@ -248,7 +248,7 @@
             "Name": "GH_{GHProject}_{RGNAME}",
             "RBAC": [
               {
-                "Name": "Owner"
+                "Name": "Contributor"
               },
               {
                 "Name": "ACR_Webhook_Operator"
@@ -277,7 +277,7 @@
                 "Tenant": "WEB"
               },
               {
-                "Name": "Key Vault Secrets User",
+                "Name": "Owner",
                 "RG": "P0",
                 "Tenant": "WEB"
               },
