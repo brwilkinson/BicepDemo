@@ -39,7 +39,7 @@ Function global:Start-AzDeploy
         [string] $CN = '.',
 
         # When deploying VM's, this is a subset of AppServers e.g. AppServers, SQLServers, ADPrimary
-        [string] $DeploymentName = ($Prefix + '-' + $Deployment + '-' + $App + '-' + (Get-ChildItem $TemplateFile).BaseName),
+        [string] $DeploymentName = ($Prefix + '-' + $App + '-' + $Deployment + '-' + (Get-ChildItem $TemplateFile).BaseName),
 
         [Switch] $SubscriptionDeploy,
 

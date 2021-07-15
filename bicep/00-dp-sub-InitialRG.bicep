@@ -57,7 +57,7 @@ var Deployment = '${Prefix}-${Global.OrgName}-${Global.Appname}-${Environment}${
 // }
 // var location = Locationlookup[Prefix]
 
-module dp_Deployment_RG 'sub-RG.bicep' = if ((Stage.RG == 1) && (!('${DeploymentID}${Environment}' == 'G0'))) {
+module dp_Deployment_RG 'sub-RG.bicep' = if ((Stage.RG == 1) && ('${DeploymentID}${Environment}' != 'G0')) {
   name: 'dp${Deployment}-RG'
   params: {
     // move these to Splatting later

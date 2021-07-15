@@ -62,7 +62,7 @@ var locationlookup = {
 }
 var location = locationlookup[Prefix]
 
-var roleDefinitionsInfo = DeploymentInfo.RoleDefinitionsInfo
+var roleDefinitionsInfo = contains(DeploymentInfo, 'roleDefinitionsInfo') ? DeploymentInfo.roleDefinitionsInfo : []
 
 module roleDefinitions './sub-RoleDefinitions-Roles.bicep' = [for (rd, index) in roleDefinitionsInfo: {
     name: rd.RoleName

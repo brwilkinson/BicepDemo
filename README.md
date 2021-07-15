@@ -8,4 +8,4 @@ Overview of Bicep with samples
 
 ### ADO Pipelines
 
-[![Build Status](https://dev.azure.com/BICEPDEMO/BICEPDEMO/_apis/build/status/brwilkinson.BicepDemo?branchName=main)](https://dev.azure.com/BICEPDEMO/BICEPDEMO/_build/latest?definitionId=1&branchName=main)
+[![Build Status](https://dev.azure.com/BICEPDEMO/BICEPDEMO/_apis/build/status/Deploy_All_AEU2_SPK_WEB_RG_S1?branchName=main)](https://dev.azure.com/BICEPDEMO/BICEPDEMO/_build/latest?definitionId=1&branchName=main)

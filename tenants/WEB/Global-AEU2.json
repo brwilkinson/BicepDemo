@@ -4,7 +4,7 @@
     "hubVnetName": "AEU2-SPK-WEB-P0-vn",
     "KVName": "AEU2-SPK-WEB-P0-kvVLT01",
     "KVUrl": "https://aeu2-spk-web-p0-kvvlt01.vault.azure.net/",
-    "certificateUrl": "https://aeu2-spk-web-p0-kvvlt01.vault.azure.net:443/secrets/HAAPP-WildCard/9a22671c18e94714b078fdba2c256d2e",
+    "certificateUrl": "https://aeu2-spk-web-p0-kvvlt01.vault.azure.net/secrets/HAAPP-WildCard/9a22671c18e94714b078fdba2c256d2e",
     "networkId": [
       "172.16.",
       144
