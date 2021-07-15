@@ -277,7 +277,12 @@
                 "Tenant": "WEB"
               },
               {
-                "Name": "Owner",
+                "Name": "Key_Vault_Reader",
+                "RG": "P0",
+                "Tenant": "WEB"
+              },
+              {
+                "Name": "Key Vault Secrets User",
                 "RG": "P0",
                 "Tenant": "WEB"
               },
