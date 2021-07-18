@@ -61,7 +61,10 @@ var AppInsightsID = resourceId('Microsoft.insights/components/', AppInsightsName
 
 // WebSiteContainerInfo
 var WebSiteInfo = (contains(DeploymentInfo, 'WebSiteContainerInfo') ? DeploymentInfo.WebSiteContainerInfo : [])
-  
+
+// var fromFile = loadFileAsBase64()
+// var fromFile2 = loadTextContent()
+
 var WSInfo = [for (ws, index) in WebSiteInfo: {
   match: ((Global.CN == '.') || contains(Global.CN, ws.name))
   saName: toLower('${DeploymentURI}sa${ws.saname}')
@@ -212,7 +215,8 @@ resource ACRWebhook 'Microsoft.ContainerRegistry/registries/webhooks@2020-11-01-
   parent: ACR[index]
   location: resourceGroup().location
   properties: {
-    serviceUri: '${list(publishingcreds[index].id,'2021-01-01').properties.scmUri}/docker/hook'
+    // serviceUri: '${list(publishingcreds[index].id,'2021-01-01').properties.scmUri}/docker/hook'
+    serviceUri: '${publishingcreds[index].list().properties.scmUri}/docker/hook'
     status: 'enabled'
     actions: [
       'push'

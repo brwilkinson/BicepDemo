@@ -72,7 +72,7 @@ var identity = [for uai in uaiInfo: {
 resource RG 'Microsoft.Resources/resourceGroups@2021-01-01' = {
     name: rg
     location: location
-    properties:{}
+    properties: {}
 }
 
 module UAI 'sub-RG-UAI.bicep' = [for (uai, index) in identity: if (uai.match) {

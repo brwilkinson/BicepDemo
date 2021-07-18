@@ -2,7 +2,7 @@ param (
     [string]$Enviro = 'S1',
     [string]$App = 'WEB'
 )
-import-module -Name "$PSScriptRoot\..\..\release\azSet.psm1" -force
+Import-Module -Name "$PSScriptRoot\..\..\release\azSet.psm1" -Force
 AzSet -Enviro $enviro -App $App
 
 break
@@ -35,7 +35,7 @@ break
 
 # Create Service principal for Env. + add GH secret or AZD Service connections
 # Infra in Github
-set-location -path BICEP:\
+Set-Location -Path BICEP:\
 . BICEP:\prereqs\4-Start-CreateServicePrincipalGH.ps1 @Current -Prefix ACU1 -Environments $Enviro    # D3, P0, G0, G1, S1, T5, P7
 . BICEP:\prereqs\4-Start-CreateServicePrincipalGH.ps1 @Current -Prefix AEU2 -Environments $Enviro    # P0, S1, T5, P7
 
@@ -113,7 +113,7 @@ AzDeploy @Current -Prefix ACU1 -TF BICEP:\templates-base\05-azuredeploy-VMApp.js
 
 # upload mofs for a particular configuration, prior to deploying AppServers
 AzMofUpload @Current -Prefix ACU1 -AAEnvironment G1 -Roles IMG -NoDomain
-AzMofUpload @Current -Prefix ACU1 -AAEnvironment P0 -Roles SQLp,SQLs
+AzMofUpload @Current -Prefix ACU1 -AAEnvironment P0 -Roles SQLp, SQLs
 
 
 # ASR deploy

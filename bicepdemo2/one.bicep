@@ -49,5 +49,8 @@ param sshPublic string
 var Deployment = '${Prefix}-${Global.OrgName}-${Global.Appname}-${Environment}${DeploymentID}'
 var DeploymentURI = toLower('${Prefix}${Global.OrgName}${Global.Appname}${Environment}${DeploymentID}')
 
+var prefixLookup = json(loadTextContent('prefix.json'))
+output myLocation string = prefixLookup['ACU1'].location
+
 output deployment string = Deployment
 output deploymentURI string = DeploymentURI

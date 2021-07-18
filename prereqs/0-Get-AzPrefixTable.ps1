@@ -29,3 +29,4 @@ $PrefixLookup | ConvertTo-Json | Set-Content -Path $PSScriptRoot\..\release\pref
     - North Europe        NE1 --> NEU
     - West Europe         WE1 --> WEU
 #>
+
