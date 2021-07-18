@@ -215,8 +215,7 @@ resource ACRWebhook 'Microsoft.ContainerRegistry/registries/webhooks@2020-11-01-
   parent: ACR[index]
   location: resourceGroup().location
   properties: {
-    // serviceUri: '${list(publishingcreds[index].id,'2021-01-01').properties.scmUri}/docker/hook'
-    serviceUri: '${publishingcreds[index].list().properties.scmUri}/docker/hook'
+    serviceUri: '${list(publishingcreds[index].id,'2021-01-01').properties.scmUri}/docker/hook'
     status: 'enabled'
     actions: [
       'push'
