@@ -1,9 +1,9 @@
 $artifacts = $psscriptroot
-Write-Warning -Message "Path is: [$artifacts]"
-break
-
 $rgname = 'bicepdemo1'
 $region = 'CentralUS'
+Write-Warning -Message "Path is: [$artifacts]"
+Write-Warning -Message "RG is: [$rgname] in Region: [$region]"
+break
 
 New-Item -Path $artifacts\availabilityset.bicep, $artifacts\storageaccount.bicep, $artifacts\publicip.bicep
 
@@ -19,7 +19,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifact
 
 # Call into Modules to build App Environments - Including array processing
 
-New-Item -Path $artifacts\VM.bicep, $artifacts\SA.bicep
+New-Item -Path $artifacts\VM.bicep, $artifacts\SA.bicep, $artifacts\ALL.bicep
 
 New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts\VM.bicep
 
@@ -40,7 +40,7 @@ Bicep --help
       bicep decompile file.json --outfile file.bicep
 #>
 
-# Compile a Bicep file to ARM json
+# Compile a Bicep file to ARM json, check if there are any errors
 
 bicep build $artifacts\VM.bicep
 
