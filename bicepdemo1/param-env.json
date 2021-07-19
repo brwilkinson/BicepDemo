@@ -5,7 +5,10 @@
         "stage": {
             "value": {
                 "SA": 0,
-                "VM": 0
+                "VM": 0,
+                "OMS": 0,
+                "KV": 0,
+                "CDN": 0
             }
         },
         "DeploymentInfo": {

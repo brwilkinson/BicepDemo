@@ -2,6 +2,7 @@ param deploymentInfo object
 
 var vmInfo = deploymentInfo.vmInfo
 
+@batchSize(1)
 module AS 'VM-availabilityset.bicep' = [for (vm, index) in vmInfo: {
   name: 'dp-as-${vm.name}'
   params: {
