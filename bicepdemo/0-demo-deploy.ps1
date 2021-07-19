@@ -1,13 +1,12 @@
 $artifacts = $psscriptroot
-$rgname = 'bicepdemo'
-$region = 'CentralUS'
+$rgname = "bicepdemo"
+$region = "CentralUS"
 Write-Warning -Message "Path is: [$artifacts]"
 Write-Warning -Message "RG is: [$rgname] in Region: [$region]"
+New-AzResourceGroup -Name $rgname -Location $region -Force
 break
 
 New-Item -Path $artifacts\VM-availabilityset.bicep, $artifacts\VM-publicip.bicep, $artifacts\SA-storageaccount.bicep
-
-New-AzResourceGroup -Name $rgname -Location $region -Force
 
 # Single Resources as Modules
 
@@ -36,6 +35,7 @@ $MyParametersDeployALL = @{
     TemplateFile          = "$artifacts\ALL.bicep"
     TemplateParameterFile = "$artifacts\param-env1.json"
     WhatIf                = $true
+    Verbose               = $true
 }
 New-AzResourceGroupDeployment @MyParametersDeployALL
 
