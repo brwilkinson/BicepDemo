@@ -16,7 +16,7 @@ break
 # Everything that works in here or Terminal, also works in a Pipeline.
 #############################
 
-#region Pre-reqs
+#region    Pre-reqs
 # Create Global Storage Account, for artifacts
 . BICEP:\prereqs\1-CreateStorageAccountGlobal.ps1 @Current
 

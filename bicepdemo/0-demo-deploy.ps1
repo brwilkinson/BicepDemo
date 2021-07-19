@@ -1,5 +1,5 @@
 $artifacts = $psscriptroot
-$rgname = 'bicepdemo1'
+$rgname = 'bicepdemo'
 $region = 'CentralUS'
 Write-Warning -Message "Path is: [$artifacts]"
 Write-Warning -Message "RG is: [$rgname] in Region: [$region]"
