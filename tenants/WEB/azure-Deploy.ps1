@@ -42,8 +42,6 @@ Set-Location -Path BICEP:\
 
 #endregion Pre-reqs
 
-# Deploy Environment
-
 <# Subscription Deploy #>
 
 # Global  sub deploy for @Current - Orchestration

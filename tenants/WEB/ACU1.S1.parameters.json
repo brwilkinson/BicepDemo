@@ -48,7 +48,7 @@
         "SA": 1,  //
         "ACR": 1,  //
         "ServerFarm": 1,  //
-        "WebSiteContainer": 0, //
+        "WebSiteContainer": 1, //
         "CDN": 0,
         "StorageSync": 0,
         "RSV": 0,
