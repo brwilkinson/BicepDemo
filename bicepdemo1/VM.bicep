@@ -1,4 +1,5 @@
 param deploymentInfo object
+param stage object
 
 var vmInfo = deploymentInfo.vmInfo
 

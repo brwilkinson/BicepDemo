@@ -33,12 +33,18 @@ New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifact
 
 $MyParametersDeployALL = @{
     ResourceGroupName     = $rgname
-    TemplateFile          = "$artifacts\ALL.bicep"
     TemplateParameterFile = "$artifacts\param-env1.json"
-    WhatIf                = $false
     Verbose               = $true
+    WhatIf                = $true
 }
-New-AzResourceGroupDeployment @MyParametersDeployALL
+
+# Orchestrate the deployment of all resources
+New-AzResourceGroupDeployment @MyParametersDeployALL -TemplateFile $artifacts\ALL.bicep
+
+# Deploy Single layer, inner dev loop
+New-AzResourceGroupDeployment @MyParametersDeployALL -TemplateFile $artifacts\VM.bicep
+
+
 
 #region    What else can I do with Bicep ?
 

@@ -4,8 +4,8 @@
     "parameters": {
         "stage": {
             "value": {
-                "SA": 0,
-                "VM": 0,
+                "SA": 1,
+                "VM": 1,
                 "OMS": 0,
                 "KV": 0,
                 "CDN": 0

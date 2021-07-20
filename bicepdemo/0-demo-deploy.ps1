@@ -1,22 +1,26 @@
 $artifacts = $psscriptroot
-$rgname = "bicepdemo"
-$region = "CentralUS"
+$rgname = 'bicepdemo'
+$region = 'CentralUS'
 Write-Warning -Message "Path is: [$artifacts]"
 Write-Warning -Message "RG is: [$rgname] in Region: [$region]"
 break
 
 New-AzResourceGroup -Name $rgname -Location $region -Force
 
-New-Item -Path $artifacts\VM-availabilityset.bicep, $artifacts\VM-publicip.bicep, $artifacts\SA-storageaccount.bicep
+# Single Resources, create files and build out the templates
+New-Item -Path @(
+    "$artifacts\VM-availabilityset.bicep",
+    "$artifacts\VM-publicip.bicep", 
+    "$artifacts\SA-storageaccount.bicep"
+)
 
 # Single Resources as Modules
 
 New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts\VM-availabilityset.bicep
-bicep build $artifacts\VM-availabilityset.bicep
 Get-AzResource -ResourceGroupName $rgname
+bicep build $artifacts\VM-availabilityset.bicep
 
 New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts\VM-publicip.bicep -WhatIf
-
 New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts\SA-storageaccount.bicep -WhatIf
 
 
@@ -33,12 +37,18 @@ New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifact
 
 $MyParametersDeployALL = @{
     ResourceGroupName     = $rgname
-    TemplateFile          = "$artifacts\ALL.bicep"
-    TemplateParameterFile = "$artifacts\param-env1.json"
-    WhatIf                = $true
+    TemplateParameterFile = "$artifacts\param-env.json"
     Verbose               = $true
+    WhatIf                = $true
 }
-New-AzResourceGroupDeployment @MyParametersDeployALL
+
+# Orchestrate the deployment of all resources
+New-AzResourceGroupDeployment @MyParametersDeployALL -TemplateFile $artifacts\ALL.bicep
+
+# Deploy Single layer, inner dev loop
+New-AzResourceGroupDeployment @MyParametersDeployALL -TemplateFile $artifacts\VM.bicep
+
+
 
 #region    What else can I do with Bicep ?
 
