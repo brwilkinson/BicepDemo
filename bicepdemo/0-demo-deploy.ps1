@@ -14,7 +14,7 @@ New-Item -Path @(
     "$artifacts\SA-storageaccount.bicep"
 )
 
-# Single Resources as Modules
+#region Single Resources as Modules
 
 New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts\VM-availabilityset.bicep
 Get-AzResource -ResourceGroupName $rgname
@@ -23,8 +23,12 @@ bicep build $artifacts\VM-availabilityset.bicep
 New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts\VM-publicip.bicep -WhatIf
 New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts\SA-storageaccount.bicep -WhatIf
 
+#endregion
 
-# Call into Modules to build App Environments - Including array processing
+
+
+
+#region Call into Modules to build App Environments - Including array processing
 
 New-Item -Path $artifacts\VM.bicep, $artifacts\SA.bicep, $artifacts\ALL.bicep
 
@@ -47,6 +51,9 @@ New-AzResourceGroupDeployment @MyParametersDeployALL -TemplateFile $artifacts\AL
 
 # Deploy Single layer, inner dev loop
 New-AzResourceGroupDeployment @MyParametersDeployALL -TemplateFile $artifacts\VM.bicep
+
+#endregion
+
 
 
 
