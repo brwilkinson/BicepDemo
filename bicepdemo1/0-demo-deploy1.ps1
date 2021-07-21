@@ -1,49 +1,56 @@
-$artifacts = $psscriptroot
+$artifacts1 = $psscriptroot
 $rgname = 'bicepdemo1'
 $region = 'CentralUS'
-Write-Warning -Message "Path is: [$artifacts]"
+Write-Warning -Message "Path is: [$artifacts1]"
 Write-Warning -Message "RG is: [$rgname] in Region: [$region]"
 break
 
+
 New-AzResourceGroup -Name $rgname -Location $region -Force
 
-New-Item -Path $artifacts\VM-availabilityset.bicep, $artifacts\VM-publicip.bicep, $artifacts\SA-storageaccount.bicep
+<#
+New-Item -Path $artifacts1\VM-availabilityset.bicep, $artifacts1\VM-publicip.bicep, $artifacts1\SA-storageaccount.bicep
 
 # Single Resources as Modules
 
-New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts\VM-availabilityset.bicep
-bicep build $artifacts\VM-availabilityset.bicep
+New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts1\VM-availabilityset.bicep
+bicep build $artifacts1\VM-availabilityset.bicep
 Get-AzResource -ResourceGroupName $rgname
 
-New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts\VM-publicip.bicep -WhatIf
+New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts1\VM-publicip.bicep -WhatIf
 
-New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts\SA-storageaccount.bicep -WhatIf
+New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts1\SA-storageaccount.bicep -WhatIf
 
 
 # Call into Modules to build App Environments - Including array processing
 
-New-Item -Path $artifacts\VM.bicep, $artifacts\SA.bicep, $artifacts\ALL.bicep
+New-Item -Path $artifacts1\VM.bicep, $artifacts1\SA.bicep, $artifacts1\ALL.bicep
+
 
 # Group resources together to build related collections of resources
-New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts\VM.bicep -WhatIf
+New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts1\VM.bicep -WhatIf
 
-New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts\SA.bicep
+New-AzResourceGroupDeployment -ResourceGroupName $rgname -TemplateFile $artifacts1\SA.bicep
+
+#>
 
 # Create a layer above to orchestrate everything and provide features flags to use in Pipelines
 
 $MyParametersDeployALL = @{
     ResourceGroupName     = $rgname
-    TemplateParameterFile = "$artifacts\param-env1.json"
+    TemplateParameterFile = "$artifacts1\param-env1.json"
     Verbose               = $true
-    WhatIf                = $true
+    WhatIf                = $false
 }
 
 # Orchestrate the deployment of all resources
-New-AzResourceGroupDeployment @MyParametersDeployALL -TemplateFile $artifacts\ALL.bicep
+New-AzResourceGroupDeployment @MyParametersDeployALL -TemplateFile $artifacts1\ALL.bicep
 
 # Deploy Single layer, inner dev loop
-New-AzResourceGroupDeployment @MyParametersDeployALL -TemplateFile $artifacts\VM.bicep
+New-AzResourceGroupDeployment @MyParametersDeployALL -TemplateFile $artifacts1\VM.bicep
 
+# Deploy Single layer, inner dev loop
+New-AzResourceGroupDeployment @MyParametersDeployALL -TemplateFile $artifacts1\SA.bicep
 
 
 #region    What else can I do with Bicep ?
@@ -63,19 +70,16 @@ Bicep --help
 
 # Compile a Bicep file to ARM json, check if there are any errors
 
-bicep build $artifacts\VM.bicep
+bicep build $artifacts1\VM.bicep
 
 # Decompile a ARM json to a Bicep file
 
 # 
 
-bicep decompile $artifacts\webfarm.json
+bicep decompile $artifacts1\webfarm.json
 
 # Now Build that new Bicep file, without Deploying it.
 
-bicep build $artifacts\aks.bicep --outfile $artifacts\aksNew.json
+bicep build $artifacts1\aks.bicep --outfile $artifacts1\aksNew.json
 
 #endregion What else can I do with Bicep ?
-
-# cleanup files
-Get-ChildItem -Path $artifacts -Filter *.bicep | Remove-Item -Confirm
