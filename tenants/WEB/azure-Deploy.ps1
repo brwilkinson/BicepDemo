@@ -64,6 +64,7 @@ AzDeploy @Current -Prefix ACU1 -TF BICEP:\bicep\SA.bicep
 AzDeploy @Current -Prefix ACU1 -TF BICEP:\bicep\ACR.bicep
 AzDeploy @Current -Prefix ACU1 -TF BICEP:\bicep\AppServicePlan.bicep
 AzDeploy @Current -Prefix ACU1 -TF BICEP:\bicep\AppServiceContainer.bicep
+AzDeploy @Current -Prefix ACU1 -TF BICEP:\bicep\AppServiceFunction.bicep
 
 # added bonus - Even more precise deployment - Even better inner dev loop
 AzDeploy @Current -Prefix ACU1 -TF BICEP:\bicep\SA.bicep                  # Deploy all storage accounts
