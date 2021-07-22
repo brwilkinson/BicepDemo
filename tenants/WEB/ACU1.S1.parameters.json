@@ -394,39 +394,6 @@
             "skutier": "Basic", //"PremiumV2",
             "skucapacity": 1,
             "deploy": 1
-          },
-                    {
-            "Name": "ASP01",
-            "kind": "elastic",
-            "perSiteScaling": false,
-            "reserved": false,
-            "skuname": "EP1",
-            "skutier": "ElasticPremium",
-            "skucapacity": 1,
-            "maxWorkerCount": 100,
-            "deploy": 1
-          }
-        ],
-                "FunctionInfo": [
-          {
-            "Name": "DIS01",
-            "kind": "functionapp",
-            "AppSVCPlan": "ASP01",
-            "saname": "dis01",
-            "runtime": "dotnet",
-            "subnet": "snMT01",
-            "preWarmedCount": 1,
-            "deploy": 0
-          },
-          {
-            "Name": "PS01",
-            "kind": "functionapp",
-            "AppSVCPlan": "ASP01",
-            "saname": "dis01",
-            "runtime": "powershell",
-            "subnet": "snMT01",
-            "preWarmedCount": 1,
-            "deploy": 1
           }
         ],
         "WebSiteContainerInfo": [
