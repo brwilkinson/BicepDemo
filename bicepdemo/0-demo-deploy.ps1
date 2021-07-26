@@ -5,6 +5,8 @@ Write-Warning -Message "Path is: [$artifacts]"
 Write-Warning -Message "RG is: [$rgname] in Region: [$region]"
 break
 
+# This demo takes 1 hour...creating templates from scratch.
+
 New-AzResourceGroup -Name $rgname -Location $region -Force
 
 # Single Resources, create files and build out the templates

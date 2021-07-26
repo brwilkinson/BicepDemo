@@ -1,5 +1,5 @@
-param stage object
 param deploymentInfo object
+param stage object
 
 module SA 'SA.bicep' = if (stage.SA == 1) {
   name: 'dp-SA'

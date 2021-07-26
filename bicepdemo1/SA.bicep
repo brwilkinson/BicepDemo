@@ -1,9 +1,9 @@
 param deploymentInfo object
 param stage object
 
-var storageAccountInfo = deploymentInfo.storageAccountInfo
+var saInfo = deploymentInfo.saInfo
 
-module SA 'SA-storageaccount.bicep' = [for (sa, index) in storageAccountInfo: {
+module SA 'SA-storageaccount.bicep' = [for (sa, index) in saInfo: {
   name: sa.name
   params: {
     storageAccountInfo: sa

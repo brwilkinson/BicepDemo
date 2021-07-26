@@ -13,7 +13,7 @@
         },
         "DeploymentInfo": {
             "value": {
-                "storageAccountInfo": [
+                "saInfo": [
                     {
                         "name": "bicepdemo5412d"
                     }
