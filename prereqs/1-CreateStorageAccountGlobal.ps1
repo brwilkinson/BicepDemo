@@ -3,14 +3,11 @@ param (
 )
 
 $ArtifactStagingDirectory = "$PSScriptRoot\.."
-#$PrimaryPrefix = 'AZC1'
+$PrefixLookup = Get-Content $Artifacts\release\prefix.json | ConvertFrom-Json
 
 $Global = Get-Content -Path $ArtifactStagingDirectory\tenants\$App\Global-Global.json | ConvertFrom-Json -Depth 10 | ForEach-Object Global
-#$Primary = Get-Content -Path $ArtifactStagingDirectory\tenants\$App\Global-$PrimaryPrefix.json | ConvertFrom-Json -Depth 10 | foreach Global
-#$Secondary = Get-Content -Path $ArtifactStagingDirectory\tenants\$App\Global-$SecondaryPrefix.json | ConvertFrom-Json -Depth 10 | foreach Global
-
 $GlobalRGName = $Global.GlobalRGName
-$PrimaryLocation = $Global.PrimaryLocation
+$PrimaryLocation = $PrefixLookup | foreach $Global.PrimaryLocation | foreach location
 $StorageAccountName = $Global.SAName
 
 Write-Verbose -Message "Global RGName: $GlobalRGName" -Verbose

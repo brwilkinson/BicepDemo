@@ -14,6 +14,10 @@ break
 #endregion
 
 #region    Pre-reqs
+# Export out the current Prefix lookup for the naming standard
+. BICEP:\prereqs\0-Get-AzPrefixTable.ps1
+
+#region    Pre-reqs
 # Create Global Storage Account, for artifacts
 . BICEP:\prereqs\1-CreateStorageAccountGlobal.ps1 @Current
 
