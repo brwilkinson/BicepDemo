@@ -1,5 +1,5 @@
 $artifacts1 = $psscriptroot
-$rgname = 'bicepdemo1'
+$rgname = 'bicepdemo2'
 $region = 'CentralUS'
 Write-Warning -Message "Path is: [$artifacts1]"
 Write-Warning -Message "RG is: [$rgname] in Region: [$region]"
@@ -11,7 +11,7 @@ New-AzResourceGroup -Name $rgname -Location $region -Force
 
 $MyParametersDeployALL = @{
     ResourceGroupName     = $rgname
-    TemplateParameterFile = "$artifacts1\param-env1.json"
+    TemplateParameterFile = "$artifacts1\param-env2.json"
     Verbose               = $true
     WhatIf                = $false
 }

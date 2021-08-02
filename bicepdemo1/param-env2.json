@@ -5,7 +5,7 @@
         "stage": {
             "value": {
                 "SA": 1,
-                "VM": 0,
+                "VM": 1,
                 "OMS": 0,
                 "KV": 0,
                 "CDN": 0
@@ -15,10 +15,10 @@
             "value": {
                 "saInfo": [
                     {
-                        "name": "bicepdemo5412d1"
+                        "name": "bicepdemo5412d3"
                     },
                     {
-                        "name": "bicepdemo5412d2"
+                        "name": "bicepdemo5412d5"
                     }
                 ],
                 "vmInfo": [
@@ -29,14 +29,6 @@
                     {
                         "name": "vm2",
                         "asname": "as1"
-                    }
-                ],
-                "sbInfo": [
-                    {
-                        "name": "vm1"
-                    },
-                    {
-                        "name": "vm2"
                     }
                 ]
             }
